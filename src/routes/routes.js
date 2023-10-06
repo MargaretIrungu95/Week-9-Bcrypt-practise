@@ -21,6 +21,6 @@ userRouter.delete("/users/deleteUser", passwordCheck, deleteUser); //password ch
 userRouter.put("/users/updatePassword", passwordCheck, hashPassword, updatePassword);// password protected by hashing using bcrypt
 
 //login in user and issue a new web token upon login in
-userRouter.get("/users/login", passwordCheck, loginUser); //password check to make sure they match to details in database token check not needed as user will have one generated upon log in
+userRouter.post("/users/login", passwordCheck, loginUser); //password check to make sure they match to details in database token check not needed as user will have one generated upon log in
 //export the routes
 module.exports = userRouter;
