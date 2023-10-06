@@ -3,7 +3,7 @@ require("dotenv").config();
 
 //import express
 const express = require("express");
-
+const cors = require ("cors");
 
 // rename express to app
 const app = express();
@@ -24,6 +24,7 @@ function syncTables() {
 
 //app.use() is for middleware
 app.use(express.json());
+app.use(cors());
 
 //middleware to allow use of routes, which are now connected to the controllers to send req and res
 app.use(userRouter);
